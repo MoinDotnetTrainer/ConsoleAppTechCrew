@@ -8,11 +8,15 @@ namespace ConsoleAppTechCrew
 {
     internal class Demo
     {
-        public void Test() {
+        public void Test()
+        {
+
+            ExampleOnClass.M1();
             Console.WriteLine("test from demo class");
         }
 
-        public void Test1() {
+        public void Test1()
+        {
             Console.WriteLine("test 1 class");
         }
     }

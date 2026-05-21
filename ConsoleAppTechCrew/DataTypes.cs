@@ -115,7 +115,6 @@ namespace ConsoleAppTechCrew
 
 
         }
-
         public void ReadLine()
         {
             Console.WriteLine("Enter Ur name");
@@ -132,7 +131,6 @@ namespace ConsoleAppTechCrew
             // readline return o/p in string format
             Console.WriteLine($" Age is {age}");
         }
-
         public void Parsing()
         {
             Console.WriteLine("Enter Ur name");
@@ -149,7 +147,6 @@ namespace ConsoleAppTechCrew
             // readline return o/p in string format
             Console.WriteLine($" Age is {age}");
         }
-
         public void Diff()
         {
             string str = null;  // string value with number
@@ -158,6 +155,28 @@ namespace ConsoleAppTechCrew
             int x = int.Parse(str);  // error
             Console.WriteLine(x);  // 123
                                    //   Console.WriteLine(x.GetType());
+        }
+        public void ArrayEx()
+        {
+
+
+            //? []
+
+            int[] arr = { 34, 45, 56, 67, 7, 87, 8, 98, 9 };
+            string[] str = { "Hi", "hello", "test" };
+            char[] ch = { };
+            float[] f = { };
+
+        //    var[] var_ = { };
+            dynamic[] dy = { 234, 346.45, true };
+            object[] obj = { 35, 4.45, false };
+            // Index First 0
+            Console.WriteLine(obj[0]);
+            Console.WriteLine(obj[1]);
+            Console.WriteLine(obj[2]);
+
+            var numbers = new int[] { 1, 2, 3 };
+            Console.WriteLine(numbers[0]);
         }
     }
 }
