@@ -40,14 +40,46 @@
             // obj.M2();
 
 
-            OverLoad obj = new OverLoad();
-            obj.M1(12,43);
+            // OverLoad obj = new OverLoad();
+            //  obj.M1(12,43);
 
 
-            
-            
+            //  StaticClass1.M1();
 
 
+            //  ConstrExample obj = new ConstrExample("2"); // constr
+            //  obj.M1();
+            //  ConstrExample.M2();
+
+
+            // ConstReadonlyClass1 obj = new ConstReadonlyClass1();
+            // obj.M1();
+
+            //  ParentClass.Add();
+            // ParentClass.Sub();
+
+
+            ///ChildClass.Mul();
+            // ChildClass.Add();
+            // ChildClass.Sub();
+            //  ChildClass.Div();
+
+            // ParentClass.x = 36;
+
+            //   ConstrChain obj = new ConstrChain();
+
+            //ChildConstrChain obj = new ChildConstrChain();
+
+
+            HRDept hr = new HRDept();
+            hr.Employees(); // 1 task
+
+
+            TechEmployyee te = new TechEmployyee();
+            te.Employees();  // another
+
+            NoNtech non = new NoNtech();
+            non.Employees(); // another task
 
         }
     }

@@ -8,7 +8,7 @@ namespace ConsoleAppTechCrew
 {
     internal class OverLoad
     {
-        public static void M1() { // method ooverload
+        public  void M1() { // method ooverload
             Console.WriteLine("First task");
         }
         public static void M1(int x)  // int with 1 argument
