@@ -10,8 +10,7 @@ namespace ConsoleAppTechCrew
     {
         public void Test()
         {
-
-            ExampleOnClass.M1();
+            //ExampleOnClass.M1();
             Console.WriteLine("test from demo class");
         }
 

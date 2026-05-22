@@ -16,8 +16,6 @@ namespace ConsoleAppTechCrew
 
         public abstract void Withdraw(); // all banks withdraw getting amount
         public abstract void Deposite();
-
-
     }
 
     class HDFC : Banking {

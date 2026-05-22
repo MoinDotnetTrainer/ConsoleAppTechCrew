@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)  // entry point
         {
-            System.Console.WriteLine("Hello, World!");
+            //   System.Console.WriteLine("Hello, World!");
 
             // call those two class here 
             // Creating an object of those 
@@ -71,15 +71,39 @@
             //ChildConstrChain obj = new ChildConstrChain();
 
 
-            HRDept hr = new HRDept();
-            hr.Employees(); // 1 task
+            //HRDept hr = new HRDept();
+            //hr.Employees(); // 1 task
 
 
-            TechEmployyee te = new TechEmployyee();
-            te.Employees();  // another
+            //TechEmployyee te = new TechEmployyee();
+            //te.Employees();  // another
 
-            NoNtech non = new NoNtech();
-            non.Employees(); // another task
+            //NoNtech non = new NoNtech();
+            //non.Employees(); // another task
+
+            //Orders o = new Orders();
+            //o.Sales();
+            //o.Profit();
+            //o.Inventory();
+
+            //Demo d = new Demo();
+            //d.Test();
+            //d.Test1();
+            //d.Test2();
+            //d.Test3();
+
+            //  Exception.Div();
+
+            RefOut obj = new RefOut();
+            //obj.Calculation(12, 2, out int add, out int sub, out int mul, out int div);
+            //Console.WriteLine(add);
+            //Console.WriteLine(sub);
+            //Console.WriteLine(mul);
+            //Console.WriteLine(div);
+
+            //obj.calci(23,3);
+
+            obj.Exe();
 
         }
     }
