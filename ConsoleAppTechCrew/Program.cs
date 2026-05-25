@@ -1,11 +1,13 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
+using System.Threading.Tasks;
 using System.Xml;
 
 namespace ConsoleAppTechCrew
 {
     internal class Program
     {
-        static void Main(string[] args)  // entry point
+        static async Task Main(string[] args)  // entry point
         {
             //   System.Console.WriteLine("Hello, World!");
 
@@ -144,7 +146,7 @@ namespace ConsoleAppTechCrew
             //obj.StoreUsersData();
 
 
-            Delegates_Example obj = new Delegates_Example();
+            // Delegates_Example obj = new Delegates_Example();
 
 
             // we can invoke a method thrw delegates
@@ -204,12 +206,36 @@ namespace ConsoleAppTechCrew
          // prop acts  table field
             */
 
-            Delegates_Example ds = new Delegates_Example();
-            ds.greet("Hi");
-            int res = ds.multiply(12, 2);
-          bool res1=  ds.isPositive(23);
-            Console.WriteLine(res);
-            Console.WriteLine(res1);
+            //  Delegates_Example ds = new Delegates_Example();
+            //  ds.greet("Hi");
+            //  int res = ds.multiply(12, 2);
+            //bool res1=  ds.isPositive(23);
+            //  Console.WriteLine(res);
+            //  Console.WriteLine(res1);
+
+            //MultiThread obj1 = new MultiThread();
+
+
+            //Thread t1 = new Thread(obj1.M1);
+            //Thread t2 = new Thread(obj1.M2);
+
+            //t1.Start();  // t1 sub thread
+
+            //t2.Start(); // t2 sub thread
+
+            //WordCount wc = new WordCount();
+
+
+            //Task t1 = new Task(wc.Exe1);
+            //t1.Start();
+            //t1.Wait();
+            //Console.ReadLine();
+
+            MyBankOps obj = new MyBankOps();
+            obj.CustomerDetails();
+            obj.NoOFTtansaction();
+            obj.MiniStatemente();
+           
         }
     }
 }
