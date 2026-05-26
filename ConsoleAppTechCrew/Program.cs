@@ -231,11 +231,12 @@ namespace ConsoleAppTechCrew
             //t1.Wait();
             //Console.ReadLine();
 
-            MyBankOps obj = new MyBankOps();
-            obj.CustomerDetails();
-            obj.NoOFTtansaction();
-            obj.MiniStatemente();
-           
+            //MyBankOps obj = new MyBankOps();
+            //obj.CustomerDetails();
+            //obj.NoOFTtansaction();
+            //obj.MiniStatemente();
+
+            LINQExamples.Basics();
         }
     }
 }
