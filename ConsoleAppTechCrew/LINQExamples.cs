@@ -7,6 +7,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppTechCrew
 {
+    class Emp
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Gender { get; set; }
+        public string Dept { get; set; }
+        public decimal Salary { get; set; }
+        public bool Status { get; set; }
+    }
 
     class Info
     {
@@ -42,6 +53,23 @@ namespace ConsoleAppTechCrew
             // Getting data from arr using Linq SYnatx
             // Select id,name from tblname
             // 
+
+            IEnumerable<int> QuerySyntax = from s in arr
+                                           where s > 5
+                                           select s;
+
+            foreach (var item in QuerySyntax)
+            {
+                Console.WriteLine(item + "Ienum ");
+            }
+
+            IQueryable<int> MethodSyntax = arr.AsQueryable()
+                                .Where(x => x > 10);
+
+            foreach (var item in MethodSyntax)
+            {
+                Console.WriteLine(item+"I Quer");
+            }
             var result = from s in arr select s;  // linq SYntax ,, condtions
             var res1 = from s in arr where s > 50 select s;
             var res2 = from s in arr where s != 50 select s;
@@ -111,11 +139,176 @@ namespace ConsoleAppTechCrew
             var res18 = (from s in arr select s).Average();
 
             var res19 = (from s in arr select s).Reverse();
-           
+
             foreach (var item in res19)
             {
-                 Console.WriteLine(item);
+                // Console.WriteLine(item);
             }
+
+            int[] source = { 1, 2, 3, 4, 5, 6, 24, 34, 55, 6546, 54, 7, 76, 867, 86, 88, 978 };
+
+            // all ANy contains --> bool value based on a cond
+
+            var res20 = (from s in source select s).All(x => x > 20);
+            var res21 = (from s in source select s).Any(x => x > 20);
+
+            // T F based on a cond 
+            // Console.WriteLine(res21);
+
+            List<Emp> Empobj = new List<Emp>()
+{
+    new Emp    {
+        ID = 1,
+        Name = "Moin",
+        Email = "moin@gmail.com",
+        Password = "Moin@123",
+        Gender = "Male",
+        Dept = "IT",
+        Salary = 45000,
+        Status=true
+    },
+
+    new Emp    {
+        ID = 2,
+        Name = "Sara",
+        Email = "sara@gmail.com",
+        Password = "Sara@123",
+        Gender = "Female",
+        Dept = "HR",
+        Salary = 38000,
+        Status=true
+    },
+
+    new Emp    {
+        ID = 3,
+        Name = "Rahul",
+        Email = "rahul@gmail.com",
+        Password = "Rahul@123",
+        Gender = "Male",
+        Dept = "Finance",
+        Salary = 52000, Status=true
+    },
+
+    new Emp    {
+        ID = 4,
+        Name = "Ayesha",
+        Email = "ayesha@gmail.com",
+        Password = "Ayesha@123",
+        Gender = "Female",
+        Dept = "Admin",
+        Salary = 41000,Status=true
+    },
+
+    new Emp    {
+        ID = 5,
+        Name = "Kiran",
+        Email = "kiran@gmail.com",
+        Password = "Kiran@123",
+        Gender = "Male",
+        Dept = "Testing",
+        Salary = 47000,Status=false
+    }
+};
+
+
+            var Login = (from s in Empobj select s).Any(x => x.Email == "kiran@gmail.com" && x.Password == "Kiran@123");
+            var Status = (from s in Empobj select s).All(x => x.Status == true);
+            var contains = source.Contains(1);
+            //  Console.WriteLine(contains);
+            var contains1 = Empobj.Where(x => x.Name.Contains("Kiran")).ToList();
+            foreach (var item in contains1)
+            {
+                //    Console.WriteLine(item.Name);
+            }
+
+            int[] Records = { 11, 12, 13, 1, 234, 7, 67, 5, 678, 68, 69, 789, 79, 10 };
+
+            /* 
+             var ElemenetAT = (from s in Records select s).ElementAt(10);
+             var ElemenetATdef = (from s in Records select s).ElementAtOrDefault(100);
+             var First = (from s in Records select s).First(x => x > 10);
+             var Firstdef = (from s in Records select s).FirstOrDefault(x => x > 100000);
+             var last = (from s in Records select s).Last(x => x < 10);
+             var lastdef = (from s in Records select s).LastOrDefault();
+            */
+
+            var single = (from s in Records select s).Single(x => x == 10);
+            // Console.WriteLine(single);
+            var take = (from s in Records select s).Take(5);
+            var skip = (from s in Records select s).Skip(5);
+
+            var takewhile = (from s in Records select s).TakeWhile(x => x > 10);
+            var takelast = (from s in Records select s).TakeLast(5);
+
+            var skipwhile = (from s in Records select s).SkipWhile(x => x > 10);
+            var skiplast = (from s in Records select s).SkipLast(5);
+            foreach (var item in skipwhile)
+            {
+                //  Console.WriteLine(item);
+            }
+
+
+            List<Info> objdata = new List<Info>() {
+            new Info{ ID=1,Fname="abc",lname="pqr",Age=34,gender="Male"},
+            new Info{ ID=2,Fname="abc1",lname="pqr1",Age=23,gender="Female"},
+            new Info{ ID=3,Fname="abc2",lname="pqr2",Age=45,gender="Male"},
+            new Info{ ID=4,Fname="abc3",lname="pqr3",Age=23,gender="Female"},
+            new Info{ ID=5,Fname="abc4",lname="pqr4",Age=33,gender="Male"}
+            };
+
+
+            var groupby1 = (from s in objdata group s by s.Age);//key
+            var groupby = (from s in objdata group s by s.gender);//key
+
+
+            var lookup = objdata.ToLookup(x => x.gender);
+
+            objdata.Add(new Info { ID = 6, Fname = "test", lname = "testing", Age = 33, gender = "Male" });
+
+
+            Console.WriteLine("group by ");
+            foreach (var item in groupby)
+            {
+                //Console.WriteLine(item.Key);
+                foreach (var data in item)
+                {
+                   // Console.WriteLine($"Id is {data.ID} fname is {data.Fname} last name is {data.lname} age is {data.Age} Gender is {data.gender}");
+                }
+            }
+            Console.WriteLine("loop up ex below");
+
+            foreach (var item in lookup)
+            {
+                //Console.WriteLine(item.Key);
+                foreach (var data in item)
+                {
+                 //   Console.WriteLine($"Id is {data.ID} fname is {data.Fname} last name is {data.lname} age is {data.Age} Gender is {data.gender}");
+                }
+            }
+
+            var Lazy = from s in objdata where s.Age > 30 select s; //3 
+            var immediate = (from s in objdata where s.Age > 30 select s).Count();// 3
+
+            objdata.Add(new Info { ID = 6, Fname = "abc5", lname = "pqr5", Age = 33, gender = "Male" });
+
+            // sort the elements asc desc
+
+            var Orderby = from s in objdata orderby s.Age select s;
+            var Orderbydesc = from s in objdata orderby s.Age descending select s;
+
+            // sort from second field onwards thenby
+
+            var thenby = objdata.OrderBy(x => x.Fname)
+                                 .ThenBy(X => X.lname).ThenByDescending(x => x.Age);
+
+
+
+
+            foreach (var item in Lazy) // 4
+            {
+                //   Console.WriteLine($"Id is {item.ID} fname is {item.Fname} last name is {item.lname} age is {item.Age} Gender is {item.gender}");
+            }
+            //  Console.WriteLine(immediate);  //4
         }
     }
 }
