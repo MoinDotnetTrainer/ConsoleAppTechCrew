@@ -67,14 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ButtonsExample.html" />
+    <Content Include="External.html" />
     <Content Include="FormsTag.html" />
     <Content Include="HtmlPage1.html" />
+    <Content Include="HtmlPage2.html" />
     <Content Include="images\0_8A9_5294_L9U0ecV.jpg" />
     <Content Include="images\1520116225562.jpg" />
     <Content Include="images\1755711077780.jpg" />
     <Content Include="images\1_HDK7UfAqOQ5Wa_ZhlV8Yfw.jpg" />
     <Content Include="images\API.png" />
+    <Content Include="InternalClass.html" />
+    <Content Include="InternalTag.html" />
     <Content Include="NewHTMLELements.html" />
+    <Content Include="StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

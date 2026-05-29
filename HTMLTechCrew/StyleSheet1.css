@@ -1,0 +1,27 @@
+﻿.border {
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.textalight {
+    text-align: center;
+    font-family: Arial;
+    text-transform: uppercase
+}
+
+.bgorange {
+    background-color: olivedrab
+}
+
+.width {
+    width: 100%
+}
+
+.margin {
+    margin: 20px;
+    padding: 20px;
+}
+
+#texttransform {
+    text-transform: lowercase
+}
